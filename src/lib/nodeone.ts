@@ -30,6 +30,26 @@ export function nodeOneLoginUrl(): string {
   return 'https://miembros.relatic.org/login'
 }
 
+/** Misma URL de login que `nodeOneLoginUrl()` (origen + ruta `/login`). */
+export function isLoginPortalUrl(href: string): boolean {
+  let a: URL
+  let b: URL
+  try {
+    a = new URL(href.trim())
+    b = new URL(nodeOneLoginUrl())
+  } catch {
+    return false
+  }
+  const normPath = (p: string) => (p.replace(/\/+$/, '') || '/')
+  return a.origin === b.origin && normPath(a.pathname) === normPath(b.pathname)
+}
+
+/** Enlace a login en nueva pestaña (p. ej. miembros…/login). */
+export const loginLinkNewTabProps = {
+  target: '_blank' as const,
+  rel: 'noopener noreferrer' as const,
+}
+
 /**
  * Entrada a la app (catálogo de servicios, planes, inicio rápido).
  * Sobreescribible con VITE_CAMPUS_URL si en algún entorno apunta a otra URL.

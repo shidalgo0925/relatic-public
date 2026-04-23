@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { heroUnifiedSlides, type HeroCta } from '../data/heroUnifiedCarousel'
+import { isLoginPortalUrl, loginLinkNewTabProps } from '../lib/nodeone'
 
 /** Autoplay del carrusel único (texto + imagen + CTAs avanzan juntos). */
 const AUTOPLAY_MS = 10_500
@@ -25,7 +26,7 @@ function HeroCtaButton({ cta }: { cta: HeroCta }) {
     )
   }
   return (
-    <a href={cta.href} className={cls}>
+    <a href={cta.href} className={cls} {...(isLoginPortalUrl(cta.href) ? loginLinkNewTabProps : {})}>
       {cta.label}
     </a>
   )

@@ -1,5 +1,5 @@
 import { Section } from '../components/Section'
-import { nodeOneLoginUrl, nodeOneUrl } from '../lib/nodeone'
+import { loginLinkNewTabProps, nodeOneLoginUrl, nodeOneUrl } from '../lib/nodeone'
 
 export function CommunityPage() {
   return (
@@ -24,7 +24,11 @@ export function CommunityPage() {
             >
               Ir a grupos
             </a>
-            <a href={nodeOneLoginUrl()} className="text-sm font-extrabold text-[color:var(--rp-navy)] hover:underline">
+            <a
+              href={nodeOneLoginUrl()}
+              {...loginLinkNewTabProps}
+              className="text-sm font-extrabold text-[color:var(--rp-navy)] hover:underline"
+            >
               Ya tengo cuenta
             </a>
           </div>

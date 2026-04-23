@@ -1,5 +1,5 @@
 import { Section } from '../components/Section'
-import { campusUrl, nodeOneLoginUrl } from '../lib/nodeone'
+import { campusUrl, loginLinkNewTabProps, nodeOneLoginUrl } from '../lib/nodeone'
 
 export function ContactPage() {
   return (
@@ -35,7 +35,11 @@ export function ContactPage() {
         <a href={campusUrl()} className="rounded-full bg-[color:var(--rp-navy)] px-6 py-3 text-sm font-extrabold text-white hover:opacity-95">
           Explorar servicios
         </a>
-        <a href={nodeOneLoginUrl()} className="rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-extrabold text-slate-900 hover:bg-slate-50">
+        <a
+          href={nodeOneLoginUrl()}
+          {...loginLinkNewTabProps}
+          className="rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-extrabold text-slate-900 hover:bg-slate-50"
+        >
           Acceder
         </a>
       </div>

@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { blogUrl, nodeOneLoginUrl, nodeOneUrl } from '../lib/nodeone'
+import { blogUrl, loginLinkNewTabProps, nodeOneLoginUrl, nodeOneUrl } from '../lib/nodeone'
 import { BrandLogo } from './BrandLogo'
 
 export function Footer() {
@@ -20,6 +20,7 @@ export function Footer() {
           <div className="mt-6 flex flex-wrap gap-2">
             <a
               href={nodeOneLoginUrl()}
+              {...loginLinkNewTabProps}
               className="rounded-full bg-white px-5 py-2 text-sm font-extrabold text-[color:var(--rp-navy)] hover:bg-slate-100"
             >
               Acceder

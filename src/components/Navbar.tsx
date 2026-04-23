@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { MENU_PROGRAMAS, MENU_SERVICIOS } from '../data/navMenu'
-import { blogUrl, nodeOneLoginUrl, nodeOneUrl } from '../lib/nodeone'
+import { blogUrl, loginLinkNewTabProps, nodeOneLoginUrl, nodeOneUrl } from '../lib/nodeone'
 import { BrandLogo } from './BrandLogo'
 import { NavMegaMenuPanel, NavMegaTrigger } from './NavMegaMenu'
 
@@ -149,6 +149,7 @@ export function Navbar() {
         <div className="hidden shrink-0 items-center gap-1.5 sm:gap-2 md:flex">
           <a
             href={accederHref}
+            {...loginLinkNewTabProps}
             className="shrink-0 rounded-full bg-[color:var(--rp-navy)] px-3 py-1.5 text-sm font-extrabold text-white shadow-sm hover:opacity-95 sm:px-3.5 sm:py-2"
           >
             Acceder
@@ -262,6 +263,7 @@ export function Navbar() {
             <div className="mt-3 grid gap-2 border-t border-slate-100 pt-3">
               <a
                 href={accederHref}
+                {...loginLinkNewTabProps}
                 className="rounded-xl bg-[color:var(--rp-navy)] px-4 py-3 text-center text-sm font-extrabold text-white"
               >
                 Acceder
