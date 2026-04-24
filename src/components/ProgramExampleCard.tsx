@@ -17,7 +17,11 @@ export function ProgramExampleCard({ program, variant }: Props) {
       <img
         src={program.img}
         alt=""
-        className="h-44 w-full shrink-0 object-cover"
+        className={
+          program.imgObjectFit === 'contain'
+            ? 'h-44 w-full shrink-0 bg-slate-100 object-contain object-center p-1'
+            : 'h-44 w-full shrink-0 object-cover'
+        }
         loading="lazy"
       />
       <div className="flex min-h-0 flex-1 flex-col p-6">

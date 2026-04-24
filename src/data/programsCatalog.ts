@@ -14,6 +14,8 @@ export type ProgramExample = {
   category: ProgramCategoryId
   /** Incluido en el home “Programas destacados” (3 tarjetas). */
   showOnHome?: boolean
+  /** `contain` para piezas gráficas (póster) que no encajan con recorte tipo foto. */
+  imgObjectFit?: 'cover' | 'contain'
 }
 
 const q = (w: number) => `auto=format&fit=crop&w=${w}&q=80`
@@ -45,6 +47,16 @@ export const programExamples: ProgramExample[] = [
     category: 'diplomados',
   },
   {
+    title: 'Curso de redacción científica y publicación en revistas científicas',
+    duration: '18 May 2026, 19:00 → 08 Jun 2026, 21:00',
+    modality: 'Híbrida (virtual + acompañamiento)',
+    blurb:
+      'Dirigido a autores de artículos científicos y editores de revistas. Fortalecé tu perfil académico y publicá con éxito.',
+    img: '/images/curso-redaccion-cientifica-publicacion.png',
+    category: 'cursos',
+    imgObjectFit: 'contain',
+  },
+  {
     title: 'Curso de análisis de datos para investigación',
     duration: '6 semanas',
     modality: 'Online asíncrono + aulas en vivo',
@@ -52,14 +64,6 @@ export const programExamples: ProgramExample[] = [
     img: `https://images.unsplash.com/photo-1460925895917-afdab827c52f?${q(1400)}`,
     category: 'cursos',
     showOnHome: true,
-  },
-  {
-    title: 'Curso de escritura académica en inglés intermedio',
-    duration: '5 semanas',
-    modality: 'Intensivo online',
-    blurb: 'Estructura, microestilo y criterios editoriales frecuentes en revistas indexadas.',
-    img: `https://images.unsplash.com/photo-1522202176988-66273c2fd55f?${q(1400)}`,
-    category: 'cursos',
   },
   {
     title: 'Curso de fundamentos de ética en investigación',
