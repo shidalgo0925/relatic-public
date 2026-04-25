@@ -1,19 +1,21 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
+
+// Tailwind v4 vía PostCSS (postcss.config.mjs), no @tailwindcss/vite: evita
+// resolución a chunks internos de Vite que cambian entre versiones.
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [react()],
   server: {
     host: '0.0.0.0',
-    port: 5174,
-    // Si 5174 está ocupado, Vite usa el siguiente y lo muestra en consola (sigue funcionando el dev).
+    // 5173 es el puerto por defecto de Vite; si está ocupado, Vite prueba el siguiente (ver consola).
+    port: 5173,
     strictPort: false,
   },
   preview: {
     host: '0.0.0.0',
-    port: 4174,
+    port: 4173,
     strictPort: false,
   },
 })

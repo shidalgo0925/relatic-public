@@ -6,11 +6,20 @@ type Props = {
   variant: 'page' | 'home'
 }
 
+const LANDING_UTM = 'utm_source=landing&utm_campaign=abril26'
+
 export function ProgramExampleCard({ program, variant }: Props) {
-  const cta =
+  const defaultCta =
     variant === 'home'
       ? { href: nodeOneUrl('/register'), label: 'Ver programa' }
       : { href: nodeOneUrl('/services'), label: 'Explorar e inscribirme' }
+
+  const cta = program.enrollmentSlug
+    ? {
+        href: `${nodeOneUrl(`/inscripcion/${program.enrollmentSlug}`)}?${LANDING_UTM}`,
+        label: 'Inscribirme',
+      }
+    : defaultCta
 
   return (
     <article className="box-border flex h-full min-h-0 w-full max-w-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">

@@ -16,6 +16,11 @@ export type ProgramExample = {
   showOnHome?: boolean
   /** `contain` para piezas gráficas (póster) que no encajan con recorte tipo foto. */
   imgObjectFit?: 'cover' | 'contain'
+  /**
+   * Slug en NodeOne (AcademicProgram); el CTA abre inscripción pública.
+   * No enviar precio ni datos del curso por query string (solo UTM en la UI).
+   */
+  enrollmentSlug?: string
 }
 
 const q = (w: number) => `auto=format&fit=crop&w=${w}&q=80`
@@ -52,9 +57,10 @@ export const programExamples: ProgramExample[] = [
     modality: 'Híbrida (virtual + acompañamiento)',
     blurb:
       'Dirigido a autores de artículos científicos y editores de revistas. Fortalecé tu perfil académico y publicá con éxito.',
-    img: '/images/curso-redaccion-cientifica-publicacion.png',
+    img: 'https://abril26.relatic.org/images/curso-redaccion-cientifica-publicacion.png',
     category: 'cursos',
     imgObjectFit: 'contain',
+    enrollmentSlug: 'curso-redaccion-cientifica-publicacion-revistas',
   },
   {
     title: 'Curso de análisis de datos para investigación',
@@ -64,6 +70,7 @@ export const programExamples: ProgramExample[] = [
     img: `https://images.unsplash.com/photo-1460925895917-afdab827c52f?${q(1400)}`,
     category: 'cursos',
     showOnHome: true,
+    enrollmentSlug: 'curso-analisis-datos-investigacion',
   },
   {
     title: 'Curso de fundamentos de ética en investigación',
@@ -72,6 +79,7 @@ export const programExamples: ProgramExample[] = [
     blurb: 'Criterios, consentimientos y riesgo mínimo para proyectos con sujetos humanos.',
     img: `https://images.unsplash.com/photo-1576086213369-97a306d36557?${q(1400)}`,
     category: 'cursos',
+    enrollmentSlug: 'curso-fundamentos-etica-investigacion',
   },
   {
     title: 'Taller de redacción científica',
