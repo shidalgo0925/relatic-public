@@ -53,7 +53,7 @@ export function Navbar() {
   const serviciosActive = location.pathname.startsWith('/servicios')
 
   useEffect(() => {
-    setDesktopDropdown(null)
+    queueMicrotask(() => setDesktopDropdown(null))
   }, [location.pathname])
 
   useEffect(() => {

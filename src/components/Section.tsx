@@ -25,23 +25,21 @@ export function Section({
     if (typeof window === 'undefined') return true
     if (!reveal) return true
     try {
-      return window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return true
     } catch {
       return true
     }
+    return false
   })
 
   useEffect(() => {
     if (!reveal) {
-      setVisible(true)
+      queueMicrotask(() => setVisible(true))
       return
     }
     const el = ref.current
     if (!el) return
-
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
-    if (mq.matches) {
-      setVisible(true)
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       return
     }
 
