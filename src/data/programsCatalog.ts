@@ -1,5 +1,10 @@
 /**
- * Programas de ejemplo (catálogo con imágenes), alineados a las anclas y al menú en `navMenu.ts`.
+ * Catálogo del landing Relatic (tarjetas + CTAs).
+ * - Solo las entradas con `enrollmentSlug` enlazan a `/inscripcion/<slug>` en `apps.relatic.org`
+ *   (misma *forma* que IIUS: detalle + planes + checkout).
+ * - Ese slug y los textos de oferta deben corresponder a programas Relatic reales: ver
+ *   `dev/app/backend/data/relatic_academic_programs.json` y al programa publicado en BD
+ *   (org Relatic). El resto son bloques de ejemplo visual sin inscripción directa.
  */
 
 export type ProgramCategoryId = 'diplomados' | 'cursos' | 'talleres' | 'certificaciones'

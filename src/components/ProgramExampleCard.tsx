@@ -14,10 +14,11 @@ export function ProgramExampleCard({ program, variant }: Props) {
       ? { href: nodeOneUrl('/register'), label: 'Ver programa' }
       : { href: nodeOneUrl('/services'), label: 'Explorar e inscribirme' }
 
+  // Página pública en apps: detalle + plan → "Continuar" → login si hace falta → /checkout
   const cta = program.enrollmentSlug
     ? {
         href: `${nodeOneUrl(`/inscripcion/${program.enrollmentSlug}`)}?${LANDING_UTM}`,
-        label: 'Inscribirme',
+        label: 'Ver detalle e inscribirme',
       }
     : defaultCta
 

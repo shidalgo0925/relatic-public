@@ -64,8 +64,9 @@ export function ProgramsPage() {
         <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-slate-500">Programas</p>
         <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-slate-900 md:text-5xl">Diplomados y cursos</h1>
         <p className="mt-4 text-slate-600">
-          Página dedicada para catálogo comercial. Cada sección reúne ejemplos con imagen; el detalle de fechas, precios y
-          cupos vive en nuestra Plataforma de Servicio.
+          Página dedicada para catálogo comercial. Cada sección reúne ejemplos con imagen; en las tarjetas con enlace a
+          inscripción, abrís en <strong>apps.relatic.org</strong> el <strong>detalle del curso y el plan</strong> y, desde
+          ahí, seguís al pago.
         </p>
       </div>
 
@@ -88,7 +89,9 @@ export function ProgramsPage() {
             <div className="mt-10">
               <h3 className="text-sm font-extrabold uppercase tracking-[0.18em] text-slate-500">Ejemplos destacados</h3>
               <p className="mt-1 max-w-2xl text-sm text-slate-600">
-                Tarjetas ilustrativas: la operación (inscripción, pago, seguimiento) ocurre en la plataforma.
+                Cursos e inscripción activa: el CTA abre en apps la página de inscripción (detalle y monto) y, al
+                continuar, el <strong>checkout</strong> para abonar. Las demás tarjetas de ejemplo redirigen al catálogo
+                de servicios.
               </p>
               <div className="mt-6 grid auto-rows-[1fr] items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {getProgramExamplesByCategory(c.id).map((p) => (
