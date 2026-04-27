@@ -58,10 +58,10 @@ export const programExamples: ProgramExample[] = [
   },
   {
     title: 'Curso de redacción científica y publicación en revistas científicas',
-    duration: '18 May 2026, 19:00 → 08 Jun 2026, 21:00',
-    modality: 'Híbrida (virtual + acompañamiento)',
+    duration: 'Inicio: 18 may. 2026, 19:00 · Fin: 08 jun. 2026, 21:00',
+    modality: 'Virtual',
     blurb:
-      'Dirigido a autores de artículos científicos y editores de revistas. Fortalecé tu perfil académico y publicá con éxito.',
+      'Bases conceptuales, éticas y técnicas de la redacción científica; producción inicial del manuscrito en clave diagnóstica e introductoria.',
     img: 'https://abril26.relatic.org/images/curso-redaccion-cientifica-publicacion.png',
     category: 'cursos',
     imgObjectFit: 'contain',
